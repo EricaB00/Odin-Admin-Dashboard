@@ -1,0 +1,341 @@
+* {
+   margin: 0;
+   padding: 0;
+
+}
+
+.container {
+   display: grid;
+   grid-template: 1fr 4fr / 1fr 4fr; 
+ 
+   min-height: 100vh; 
+ 
+   grid-template-areas:
+   'sidebar header header header'
+   'sidebar content content announcements'
+   'sidebar content content trending';
+  overflow: hidden;
+}
+   
+
+
+ /*------------ Sidebar------------*/
+.sidebar {
+   grid-area: 1 / 1 / -1 / 2; 
+   background-color: rgb(56, 130, 227);
+   color: white;
+   grid-area: sidebar;
+  
+}
+
+.logo {
+  margin-left: 1.5rem;
+  padding: 1rem;
+  
+}
+
+span {
+   font-size: 1.5rem;
+   font-weight: bold;
+  padding-top: 1rem;
+  margin-left: .5rem;
+  position: absolute;
+
+}
+
+ul {
+   list-style-type: none;
+   margin-left: 3rem;  
+}
+
+a {
+   color: white;
+   text-decoration: none;
+  font-weight:bold; 
+}
+
+li {
+   padding: .5rem;
+  font-size: 18px;
+}
+
+.side-content i {
+   padding: .5rem;
+}
+
+.side-content-secondary {
+   margin-top: 1rem;
+   
+}
+
+.border {
+   border: 1px solid white;
+   width: 70%;
+   margin-left: 3rem;
+   margin-top: 1rem;
+}
+
+a:hover {
+   font-size: 1.3rem;
+}
+
+
+
+/*------------Header-----------*/
+
+.header {
+   display: grid;
+    grid-area: 1 / 2 / 2 / -1;  
+    grid-area: header;
+   margin-bottom: 1rem; 
+   
+}
+
+.search-bar  i{
+  padding-left: 1rem;
+  margin-left: 50px;
+  font-size: 20px;
+}
+
+input {
+   margin: 1rem;
+   width: 75%;
+   border: 1px solid  rgb(220, 220, 226);
+  height: 25px;
+  border-radius: 10px;
+  background-color: rgb(220, 220, 226);
+  
+}
+
+.profile {
+ display: flex;
+ flex-direction: row;
+ justify-content: baseline;
+padding-top: 1.5rem;
+padding-left: 4rem;
+ align-items: space-around;
+ gap: 3rem; 
+ grid-area: 1/2/2/3;
+ margin-left: 5rem;
+
+}
+.profile h3 {
+   font-size: 20px;
+}
+
+.profile i {
+   font-size: 20px;
+}
+  
+.header-welcome {
+   display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;  
+}
+
+.header-welcome i {
+   font-size: 50px;
+  margin-left: 4rem;
+  
+}
+
+.welcome {
+   padding-left: 2rem;
+   font-weight: bold;
+   font-size: 15px;
+   
+}
+.intro {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+
+.user-name {
+font-weight: bold;
+font-size: 20px;
+ padding: 10px;
+ align-items: flex-end;
+ margin-left: 10px;
+ 
+}
+
+.header-buttons {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   gap: 3rem;
+   margin-left: 1rem;
+  
+ }
+
+ button {
+   background-color:  rgb(56, 130, 227);
+   color: white;
+   padding: 10px;
+   height: 40px;
+   width: 20%;
+   border-radius: 20px;
+   border: 1px solid rgb(56, 130, 227);
+   font-size: 15px;
+   margin-right: 10px;
+  
+ }
+
+ 
+/*------------Main Content------------*/
+
+.content {
+   display: grid;
+  grid-area: 2 / 2 / 3 / 3; 
+  background-color: rgb(220, 220, 226);
+   grid-template-columns: 3fr 1fr;
+   grid-template-rows: auto 1fr;
+  grid-area: content;
+ padding: 2rem;
+ grid-template-areas:
+  'projects announcements'
+  'projects trending';
+  overflow: hidden;
+   
+}
+
+.content h3 {
+   font-size: 1.3rem;
+   margin-bottom: 0.5rem;
+}
+
+
+ /*------ Projects---------------*/
+
+.projects {
+   display: grid;
+   /* grid-area: 1 / 1 /3 / 2;  */
+   grid-area: projects; 
+ }
+
+ .project-block {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 4;
+  
+ }
+
+ .block {
+   background-color: white;
+   padding: 1.5rem;
+   border-radius: 0.5rem;
+ }
+
+ .projects .project-block {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   grid-auto-rows: 200px;
+   gap: 1.5rem;
+  
+ }
+
+ .projects .block {
+   border-left: 10px solid rgb(56, 130, 227);
+   display: flex;
+   flex-direction: column;
+ }
+
+ .projects .title {
+   font-size: 1.2rem;
+   margin-bottom: 0.25rem;
+
+ }
+
+ .action-row {
+   margin-top: auto;
+   align-self: flex-end;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   gap: 1.5rem;
+ }
+
+
+ /*--------Announcements-------*/
+
+ .announcements { 
+  grid-area: announcements;
+  background-color: white;
+  display: grid;
+  margin: .6rem;
+ overflow: hidden;
+ border-radius: 0.5rem;
+ }
+
+ .announcements h3 {
+   background-color: rgb(220, 220, 226);
+   font-size: 1.3rem;
+   margin-bottom: 0.5rem; 
+   padding-bottom: 0.5rem;
+ }
+
+ .ann-block {
+   border-radius: 0.5rem;
+   width: 35ch;  
+ }
+
+ .announcement {
+padding: 1rem; 
+ }
+
+ .ann-line {
+   border: 1px solid rgb(220, 220, 226); 
+   width: 70%;
+   margin-left: 1rem;  
+ }
+
+ .ann-title {
+   font-size: 15px;
+ }
+
+ /*-------Trending----------*/
+
+ .trending {
+   grid-area: trending;
+  background-color: white;
+ margin: .6rem;
+ border-radius: 0.5rem;
+ width: 3c5h;
+ padding-bottom: 2rem;
+ grid-area: trending;
+ overflow: hidden;
+}
+
+.trending h3 {
+   background-color: rgb(220, 220, 226);
+   font-size: 1.3rem;
+  
+}
+
+.trending svg {
+   height: 50px;
+   margin-left: 1rem;
+}
+
+.profile-block {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;   
+}
+
+.profiles {
+   display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: .3rem;
+}
+
+.trend-text {
+   margin-left: 1rem;
+}
+
+.trend-title {
+   padding-bottom: .3rem;
+}
